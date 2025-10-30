@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>College Timetable</title>
+<style>
+table, th, td {border: 1px solid black; border-collapse: collapse; text-align: center;}
+th, td {padding: 6px;}
+caption {font-weight: bold; font-size: 18px; margin: 6px;}
+.nested {border: 1px solid black; border-collapse: collapse; width: 100%;}
+.nested td, .nested th {border: 1px solid black; padding: 3px;}
+</style>
+</head>
+<body>
+
+<table align="center">
+<caption>College Timetable - CSE Dept</caption>
+<tr>
+<th>Day/Time</th><th>9-10</th><th>10-11</th><th>11-12</th>
+<th>12-1</th><th>1-2</th><th>2-3</th><th>3-4</th>
+</tr>
+
+<tr>
+<th>Mon</th><td>Maths</td><td>English</td><td></td>
+<td rowspan="5">Break</td><td>Computer Lab</td><td colspan="2">Sports</td>
+</tr>
+
+<tr>
+<th>Tue</th><td>Maths</td><td colspan="2">C Programming</td>
+<td>Electronics Lab</td><td colspan="2">Library</td>
+</tr>
+
+<tr>
+<th>Wed</th><td>Maths</td><td>English</td><td>Physics</td>
+<td>Computer Networks</td>
+<td colspan="2">
+<table class="nested">
+<tr><th colspan="2">Lab Details</th></tr>
+<tr><td>Batch A</td><td>DBMS Lab</td></tr>
+<tr><td>Batch B</td><td>OS Lab</td></tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<th>Thu</th><td>Workshop</td><td>Physics</td><td></td>
+<td>Maths</td><td>English</td><td>Seminar</td>
+</tr>
+
+<tr>
+<th>Fri</th><td>Comp Net</td><td>English</td><td>Physics</td>
+<td colspan="3">Project Work</td>
+</tr>
+</table>
+
+<br>
+<b>Outcome:</b>
+<ul>
+<li>Created a college timetable using HTML tables.</li>
+<li>Used rowspan, colspan, caption, and nested tables.</li>
+<li>Organized tabular data neatly on webpage.</li>
+</ul>
+
+</body>
+</html>
