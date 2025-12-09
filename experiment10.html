@@ -1,0 +1,289 @@
+                     Experiment 10:
+
+
+ Create a Responsive E-commerce Style Navbar using HTML, CSS, Flexbox, and Media Queries. 
+Objectives
+ 1. To design a navigation bar (navbar) for an e-commerce website.
+ 2. To apply CSS display properties (block, inline, inline-block, float, clear). 
+3. To implement Flexbox properties (justify-content, align-items, flex-direction).
+ 4. To use relative units (px, %, em, rem, vh, vw) for responsiveness.
+ 5. To apply media queries and breakpoints for mobile-first responsive design.
+ Tools Required
+ • Text Editor (VS Code / Sublime Text / Notepad++)
+ • Web Browser (Chrome / Firefox / Edge)
+ Theory
+ • Navigation Bar (Navbar): A horizontal or vertical menu allowing users to browse site sections.
+ • Display in CSS:
+ • block → element takes full width.
+ • inline → element takes only needed width
+ • inline-block → inline element but allows width/height.
+ • float and clear → for positioning elements.
+ • Flexbox: 
+• display: flex; → creates a flex container.
+ • justify-content → aligns items horizontally.
+ • align-items → aligns items vertically.
+ • flex-direction → row/column layout.
+ • Responsive Design:
+ • Units (%, em, rem, vh, vw) adjust with screen size. 
+• Media Queries: Example →
+ • @media (max-width: 768px) { ... }
+ lets us apply different styles on smaller devices.
+ • Mobile-First Design: Start with styles for small screens, then enhance for larger screens.
+
+Code Implementation:
+<!DOCTYPE html>
+<html>
+<head>
+<title>ShopEase Navbar</title>
+
+<style>
+    body{
+        margin:0;
+        font-family:Arial, sans-serif;
+    }
+
+    /* NAVBAR */
+    nav{
+        background:#111;
+        color:white;
+        padding:12px 25px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .logo{
+        font-size:22px;
+        font-weight:bold;
+    }
+
+    .menu{
+        list-style:none;
+        display:flex;
+        gap:40px;
+        margin:0;
+        padding:0;
+    }
+
+    .menu li a{
+        color:white;
+        text-decoration:none;
+        font-size:15px;
+    }
+
+    .right{
+        display:flex;
+        align-items:center;
+        gap:20px;
+        font-size:15px;
+    }
+
+    /* HAMBURGER (for responsive) */
+    .hamburger{
+        display:none;
+        font-size:26px;
+        cursor:pointer;
+    }
+
+    /* ----------- RESPONSIVE BREAKPOINT ----------- */
+    @media(max-width: 768px){
+        .menu{
+            display:none;
+            flex-direction:column;
+            background:#222;
+            width:100%;
+            padding:20px;
+        }
+
+        .menu.show{
+            display:flex;
+        }
+
+        .hamburger{
+            display:block;
+        }
+
+        .right{
+            display:none;
+        }
+    }
+</style>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">ShopEase</div>
+
+    <ul class="menu" id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Deals</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <div class="right">
+        Cart 🛒
+        <b>Login</b>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+</nav>
+
+<h2 style="margin-left:20px; margin-top:20px;">Welcome to ShopEase!</h2>
+<p style="margin-left:20px;">Your one-stop destination for all shopping needs.</p>
+
+</body>
+</html>
+
+ 
+
+Experiment: Extended – Responsive E-commerce Navbar with Hamburger Menu 
+Objectives
+ • Create a responsive e-commerce style navbar with a hamburger menu. 
+• Learn how to toggle navigation menu on mobile screens using only HTML + CSS.
+ • Practice flexbox, media queries, and mobile-first design.
+ Tools Required 
+• Text Editor (VS Code / Notepad++ / Sublime). 
+• Web Browser (Chrome / Firefox / Edge).
+ Expected Outcome
+ • A responsive navbar with logo + links + cart/login.
+ • On desktop/tablet → full menu visible. 
+• On mobile screen → only logo + ☰ (hamburger). Clicking ☰ will show/hide the menu. 
+Theory 
+Checkbox Hack
+1.	 o A hidden is used.
+2.	 o A with ☰ icon is linked to the checkbox.
+3.	 o When checkbox is checked → CSS: checked selector shows the menu.
+4.	 2. Flexbox Layout
+                      o Navbar divided into logo, links, and actions.
+                      o justify-content: space-between; align-items: center; .
+ 3. Media Queries
+         o Hide links in small screens.
+         o Show hamburger icon instead. 
+         o On click, menu slides down.
+
+Code implementation
+<!DOCTYPE html>
+<html>
+<head>
+<title>ShopEase Navbar</title>
+
+<style>
+    body{
+        margin:0;
+        font-family:Arial, sans-serif;
+    }
+
+    /* NAVBAR */
+    nav{
+        background:#111;
+        color:white;
+        padding:12px 25px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .logo{
+        font-size:22px;
+        font-weight:bold;
+    }
+
+    .menu{
+        list-style:none;
+        display:flex;
+        gap:40px;
+        margin:0;
+        padding:0;
+    }
+
+    .menu li a{
+        color:white;
+        text-decoration:none;
+        font-size:15px;
+    }
+
+    .right{
+        display:flex;
+        align-items:center;
+        gap:20px;
+        font-size:15px;
+    }
+
+    /* HAMBURGER (for responsive) */
+    .hamburger{
+        display:none;
+        font-size:26px;
+        cursor:pointer;
+    }
+
+    /* ----------- RESPONSIVE BREAKPOINT ----------- */
+    @media(max-width: 768px){
+        .menu{
+            display:none;
+            flex-direction:column;
+            background:#222;
+            width:100%;
+            padding:20px;
+        }
+
+        .menu.show{
+            display:flex;
+        }
+
+        .hamburger{
+            display:block;
+        }
+
+        .right{
+            display:none;
+        }
+    }
+</style>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">ShopEase</div>
+
+    <ul class="menu" id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Deals</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <div class="right">
+        Cart 🛒
+        <b>Login</b>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+</nav>
+
+<h2 style="margin-left:20px; margin-top:20px;">Welcome to ShopEase!</h2>
+<p style="margin-left:20px;">Your one-stop destination for all shopping needs.</p>
+
+</body>
+</html>
+
+Output
+ 

@@ -1,120 +1,149 @@
+                             Experiment 9:
+
+                             
+ Create Web page for Responsive Product Grid: create mobile-friendly designs with breakpoints.
+ Objective: 
+To design a Responsive Product Grid webpage using CSS Grid and media queries (breakpoints) for mobile-friendly layouts.
+ Tools Required
+         • Text Editor (Notepad, VS Code, Sublime Text)
+        • Web Browser (Chrome, Edge, Firefox)
+ Theory:
+ A responsive web design adjusts automatically to different screen sizes (desktop, tablet, mobile).
+       • CSS Grid: Used to create structured layouts in rows and columns.
+      • Breakpoints: Specific screen width values defined in media queries to apply different CSS rules for different devices.
+ Common breakpoints:
+       • Desktop (large screens): ≥1024px
+      • Tablet (medium screens): 600px – 1024px
+      • Mobile (small screens): ≤600px
+ In this experiment:
+     • Grid has 4 columns on desktop,
+    • 2 columns on tablets,
+    • 1 column on mobiles. Code:
+
+Code:
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Responsive Product Grid</title>
-<style>
-    body{
-        font-family: Arial, sans-serif;
-        background: #f5f5f5;
-        margin: 0;
-        padding: 20px;
-    }
+    <title>Responsive Product Grid</title>
 
-    h2{
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .container{
-        max-width: 1200px;
-        margin: auto;
-        padding: 20px;
-        border: 2px solid #555;
-        background: white;
-    }
-
-    .grid{
-        display: grid;
-        gap: 20px;
-
-        
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    
-    @media (min-width: 600px) and (max-width: 1024px){
-        .grid{
-            grid-template-columns: repeat(2, 1fr);
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            margin: 0;
+            padding: 20px;
         }
-    }
 
-    
-    @media (min-width: 1025px){
-        .grid{
-            grid-template-columns: repeat(4, 1fr);
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
         }
-    }
 
-    .card{
-        background: white;
-        border-radius: 6px;
-        padding: 15px;
-        text-align: center;
-        box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
+        /* Outer Border Box */
+        .wrapper {
+            border: 2px solid black;
+            padding: 20px;
+            width: 90%;
+            margin: auto;
+        }
 
-    .card img{
-        width: 100%;
-        height: 120px;
-        object-fit: contain;
-        margin-bottom: 10px;
-    }
+        /* CSS GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Desktop: 4 per row */
+            gap: 20px;
+        }
 
-    .title{
-        font-weight: bold;
-        font-size: 18px;
-    }
+        /* Product Card */
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 6px #ccc;
+            text-align: center;
+        }
 
-    .desc{
-        font-size: 14px;
-        margin: 5px 0;
-    }
+        .card img {
+            width: 60px;
+            margin-bottom: 10px;
+        }
 
-    .price{
-        font-weight: bold;
-        margin-top: 5px;
-    }
-</style>
+        .price {
+            margin-top: 5px;
+            font-weight: bold;
+            color: green;
+        }
+
+        /* Tablet Breakpoint (2 per row) */
+        @media (max-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile Breakpoint (1 per row) */
+        @media (max-width: 800px) {
+            .grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
+<h3><b>Output:</b></h3>
+<p>• <b>On desktop:</b> 4 product cards per row.</p>
+
+<div class="wrapper">
     <h2>Responsive Product Grid</h2>
 
     <div class="grid">
-
         <div class="card">
-            <img src=" https://m.media-amazon.com/images/I/71TMpelvOOL._SY741_.jpg" alt="Product 1">
-            <div class="title">Product 1</div>
-            <div class="desc">High-quality item with great features.</div>
-            <div class="price">₹1499</div>
+            <img src="https://via.placeholder.com/60" alt="">
+            <h3>Product 1</h3>
+            <p>High-quality item with great features.</p>
+            <div class="price">₹499</div>
         </div>
 
         <div class="card">
-            <img src="https://m.media-amazon.com/images/I/61ChcsEZsrL._SY741_.jpg" alt="Product 2">
-            <div class="title">Product 2</div>
-            <div class="desc">Durable and stylish for daily use.</div>
-            <div class="price">₹27999</div>
+            <img src="https://via.placeholder.com/60" alt="">
+            <h3>Product 2</h3>
+            <p>Durable and stylish for daily use.</p>
+            <div class="price">₹799</div>
         </div>
 
         <div class="card">
-            <img src="https://m.media-amazon.com/images/I/61faDMBMdmL._SX522_.jpg" alt="Product 3">
-            <div class="title">Product 3</div>
-            <div class="desc">Lightweight and comfortable.</div>
+            <img src="https://via.placeholder.com/60" alt="">
+            <h3>Product 3</h3>
+            <p>Lightweight and comfortable.</p>
             <div class="price">₹1,299</div>
         </div>
 
         <div class="card">
-            <img src="https://m.media-amazon.com/images/I/7192GnqZJoL._SX679_.jpg" alt="Product 4">
-            <div class="title">Product 4</div>
-            <div class="desc">Trendy design with premium quality.</div>
-            <div class="price">₹1099</div>
+            <img src="https://via.placeholder.com/60" alt="">
+            <h3>Product 4</h3>
+            <p>Trendy design with premium quality.</p>
+            <div class="price">₹999</div>
         </div>
-
     </div>
 </div>
 
+<br><br>
+<p>• <b>On tablet (≤1024px):</b> 2 product cards per row.</p>
+
+<p>• <b>On mobile (≤600px):</b> 1 product card per row.</p>
+
+<hr>
+
+<h3>Outcome:</h3>
+<ul>
+    <li>The layout changes based on screen size.</li>
+    <li>Breakpoints ensure readability and user-friendly design across devices.</li>
+    <li>Successfully created a <b>Responsive Product Grid</b> using <b>CSS Grid and media queries</b>.</li>
+</ul>
+
 </body>
 </html>
+
+Output:
+ 

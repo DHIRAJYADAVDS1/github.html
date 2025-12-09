@@ -1,0 +1,113 @@
+                       Experiment 8:
+
+
+Create Web page for Student Profile Card: design layouts using flexbox (justify-content, align-items, flex direction).
+ Objective: To design layouts using flexbox (justify-content, align-items, flex-direction).
+ Tools Required 
+• Text Editor (Notepad, VS Code, Sublime Text) 
+• Web Browser (Chrome, Edge, Firefox)
+ Theory:
+ Flexbox (Flexible Box Layout) is a CSS layout model that allows easy alignment and distribution of elements inside a container. It is especially useful for responsive design. Key properties:
+ 1. display: flex; → Defines a flex container.
+ 2. flex-direction: 
+              o  row → Items placed left to right (default).
+              o  column → Items placed top to bottom.
+              o   row-reverse / column-reverse → Reverse order.
+ 3. justify-content: (aligns items on the main axis)
+              o  flex-start → Items at the beginning.
+             o  center → Items centered.
+             o  flex-end → Items at the end.
+             o  space-between, space-around, space-evenly → Distributes space.
+ 4. align-items: (aligns items on the cross axis) 
+             o  flex-start, center, flex-end, stretch, baseline.
+ 5. flex-wrap: → Moves items to the next line if space is insufficient.
+ In this experiment, we apply flexbox to arrange multiple student profile cards neatly.
+
+Code Implementation
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile Cards</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff;
+        }
+
+        /* Main Flex Container */
+        .container {
+            display: flex;
+            justify-content: center;   /* Center cards horizontally */
+            align-items: center;       /* Center vertically */
+            flex-direction: row;       /* Row alignment */
+            gap: 30px;                 /* Space between cards */
+            margin-top: 50px;
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        /* Individual Card */
+        .card {
+            width: 220px;
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 0 8px #ccc;
+        }
+
+        /* Round Circle for Initials */
+        .circle {
+            width: 70px;
+            height: 70px;
+            background: #007bff;
+            border-radius: 50%;
+            color: white;
+            font-size: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+        }
+
+        .card h3 {
+            margin: 5px 0;
+        }
+
+        .card p {
+            margin: 3px 0;
+            font-size: 14px;
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+<h3 style="padding-left: 20px;">Output:</h3>
+<p style="padding-left: 20px;">Three student profile cards arranged in a row, aligned at the center of the page.</p>
+
+<!-- Main Flex Layout -->
+<div class="container">
+
+    <!-- Card 1 -->
+    <div class="card">
+        <div class="circle">AK</div>
+        <h3>Dhiraj yadav</h3>
+        <p>B.Tech - CSE-DS</p>
+        <p>Roll No: 2025B15410155</p>
+        <p>1st Year</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <div class="circle">AK</div>
+        <h3>Mohan kumar</h3>
+        <P>B.Tech-CSE-DS</P>
+        <P>Roll No:2025B15410032</P>
+        <p>1st Year</p>
+        </div>
+
+Output
